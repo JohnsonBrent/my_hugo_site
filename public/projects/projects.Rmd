@@ -1,0 +1,10 @@
+---
+title: projects.Rmd
+author: Brent Johnson
+date: '2017-10-29'
+slug: eliciting-gamma-priors-rmd
+categories: []
+tags: [Github]
+---
+
+This is a test

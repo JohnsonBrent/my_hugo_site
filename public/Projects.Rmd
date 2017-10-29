@@ -1,0 +1,12 @@
+---
+title: Projects
+author: Brent Johnson
+date: '2017-10-29'
+slug: projects-2-rmd
+categories: []
+tags: []
+---
+
+A collection of code projects, most located on my GitHub site.  Feel free to comment there or [via email](brent@centralmoment.com).
+
+* An R package to generate [gamma distribution parameters from judgemental priors](https://github.com/JohnsonBrent/gammabuster). This is helpful if one wants to fit a Bayesian model with a poisson likelihood. Since the gamma distribution is the conjugate prior for the poisson, this package lets one include judgmental priors on the poisson. For example, I use this when working with a data table (which is poisson-multinomial) and I've got multiple data sources or client beliefs about the values in the table or their marginal totals.

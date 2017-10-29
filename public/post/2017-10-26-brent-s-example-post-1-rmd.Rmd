@@ -1,0 +1,10 @@
+---
+title: Brent's example post 1.Rmd
+author: Brent Johnson
+date: '2017-10-26'
+slug: brent-s-example-post-1-rmd
+categories: []
+tags: []
+---
+
+Okay we're just trying things out here.
