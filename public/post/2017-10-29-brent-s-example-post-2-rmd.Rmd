@@ -1,9 +1,0 @@
----
-title: Brent's example post 2.Rmd
-author: Brent Johnson
-date: '2017-10-29'
-slug: brent-s-example-post-2-rmd
-categories: []
-tags: []
----
-

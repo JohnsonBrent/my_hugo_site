@@ -2,24 +2,51 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Brent Johnson</title>
-    <link>/posts/</link>
+    <link>https://www.centralmoment.com/posts/</link>
     <description>Recent content in Posts on Brent Johnson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <copyright>Copyright © 2017 Brent Johnson</copyright>
-    <lastBuildDate>Thu, 26 Oct 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 19 Jan 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.centralmoment.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Data Science Unplugged: Additive Boosting</title>
+      <link>https://www.centralmoment.com/posts/2018-02-20-data-science-unplugged-additive-boosting-content/</link>
+      <pubDate>Fri, 19 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.centralmoment.com/posts/2018-02-20-data-science-unplugged-additive-boosting-content/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Taming Noisy Data Through Bayesian Analysis - A Market Share Tracking Example</title>
+      <link>https://www.centralmoment.com/posts/taming-noisy-data-through-bayesian-analysis-a-market-share-tracking-example-rmd/</link>
+      <pubDate>Sun, 19 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.centralmoment.com/posts/taming-noisy-data-through-bayesian-analysis-a-market-share-tracking-example-rmd/</guid>
+      <description>Here’s a white paper I published on IPR’s web site. It’s somewhat similar to my presentation to the TMAG group at around the same time. But this document here goes into a bit more detail on the model structure.
+I’ve been using Stan for most of my Bayesian analysis. And I can’t enough positive things about Richard McElreath’s rethinking package which is a front-end for Stan. McElreath’s book of the same name is outstanding as well.</description>
+    </item>
+    
+    <item>
       <title>TMAG-59</title>
-      <link>/posts/2017-10-23-tmag-59/</link>
+      <link>https://www.centralmoment.com/posts/2017-10-23-tmag-59/</link>
       <pubDate>Thu, 26 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/posts/2017-10-23-tmag-59/</guid>
-      <description>On October 19 I had the pleasure of presenting at the TMAG organization’s 59th semi-annual meeting. TMAG is the Information Technology Market Analysis Group–a collection of market researchers and data scientists from technology companies (e.g., Google, Intel, FaceBook, Microsoft, etc.).
+      <guid>https://www.centralmoment.com/posts/2017-10-23-tmag-59/</guid>
+      <description>On October 18, 2017 I had the pleasure of presenting at the TMAG organization’s 59th semi-annual meeting. TMAG is the Information Technology Market Analysis Group–a collection of market researchers and data scientists from technology companies (e.g., Google, Intel, FaceBook, Microsoft, etc.).
 I told a story (with my co-author Jaya Ramaprasad of Microsoft) of how Jaya and I combined a variety of data sources to produce one single estimate of Microsoft’s market share in various server software categories.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.centralmoment.com/posts/2018-02-20-data-science-unplugged-additive-boosting-content/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.centralmoment.com/posts/2018-02-20-data-science-unplugged-additive-boosting-content/</guid>
+      <description>Data Science Unplugged: Additive Boostingcode{white-space: pre;}if (window.hljs) {hljs.configure({languages: []});hljs.initHighlightingOnLoad();if (document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) {window.setTimeout(function() { hljs.initHighlighting(); }, 0);}}Data Science Unplugged: Additive BoostingAdditive boosting explained using simple codeBrent Johnson2018-01-19Data Science Unplugged⊕You can easily download the R Mardown version of this document and reproduce all my examples on your own. You may just need to install the rpart and rpart.</description>
     </item>
     
   </channel>

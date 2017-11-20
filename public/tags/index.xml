@@ -2,40 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Brent Johnson</title>
-    <link>/tags/</link>
+    <link>https://www.centralmoment.com/tags/</link>
     <description>Recent content in Tags on Brent Johnson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <copyright>Copyright © 2017 Brent Johnson</copyright>
-    <lastBuildDate>Thu, 26 Oct 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 19 Jan 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.centralmoment.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Data Science Unplugged</title>
+      <link>https://www.centralmoment.com/tags/data-science-unplugged/</link>
+      <pubDate>Fri, 19 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.centralmoment.com/tags/data-science-unplugged/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hiearchical Bayes</title>
+      <link>https://www.centralmoment.com/tags/hiearchical-bayes/</link>
+      <pubDate>Sun, 19 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.centralmoment.com/tags/hiearchical-bayes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Hierarchical Bayes</title>
-      <link>/tags/hierarchical-bayes/</link>
+      <link>https://www.centralmoment.com/tags/hierarchical-bayes/</link>
       <pubDate>Thu, 26 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/hierarchical-bayes/</guid>
+      <guid>https://www.centralmoment.com/tags/hierarchical-bayes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Presentations</title>
-      <link>/tags/presentations/</link>
+      <link>https://www.centralmoment.com/tags/presentations/</link>
       <pubDate>Thu, 26 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/presentations/</guid>
+      <guid>https://www.centralmoment.com/tags/presentations/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Time Series Analysis</title>
+      <link>https://www.centralmoment.com/tags/time-series-analysis/</link>
+      <pubDate>Sun, 19 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.centralmoment.com/tags/time-series-analysis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tmag</title>
-      <link>/tags/tmag/</link>
+      <link>https://www.centralmoment.com/tags/tmag/</link>
       <pubDate>Thu, 26 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/tmag/</guid>
+      <guid>https://www.centralmoment.com/tags/tmag/</guid>
       <description></description>
     </item>
     

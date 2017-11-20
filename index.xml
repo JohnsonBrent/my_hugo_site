@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Brent Johnson</title>
+    <link>/</link>
+    <description>Recent content on Brent Johnson</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 19 Nov 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Taming Noisy Data Through Bayesian Analysis - A Market Share Tracking Example</title>
+      <link>/posts/taming-noisy-data-through-bayesian-analysis-a-market-share-tracking-example-rmd/</link>
+      <pubDate>Sun, 19 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/taming-noisy-data-through-bayesian-analysis-a-market-share-tracking-example-rmd/</guid>
+      <description>Here’s a white paper I published on IPR’s web site. It’s somewhat similar to my presentation to the TMAG group at around the same time. But this document here goes into a bit more detail on the model structure.
+I’ve been using Stan for most of my Bayesian analysis. And I can’t enough positive things about Richard McElreath’s rethinking package which is a front-end for Stan. McElreath’s book of the same name is outstanding as well.</description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>/projects-2-rmd/</link>
+      <pubDate>Sun, 29 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/projects-2-rmd/</guid>
+      <description>A collection of code projects, most located on my GitHub site. Feel free to comment there or via email.
+An R package to generate gamma distribution parameters from judgemental priors. Since the gamma distribution is the conjugate prior for the poisson, this package lets one include judgmental priors on the poisson. For example, I use this when working with a data table (which is poisson-multinomial) and I’ve got multiple data sources or client beliefs about the values in the table or their marginal totals.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Fri, 27 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>In my day job, I work at International Planning &amp;amp; Research as a project director. I manage teams that solve client market analysis and data science problems. Example engagements include price optimization, share/performance tracking, product portfolio decision-making, prospect identification, customer clustering, text mining, forecasting&amp;ndash;and more. Nothing pleases me more than discovering interesting stories from complex data sets and sharing those stories with clients.
+This web site contains some of those stories and discoveries.</description>
+    </item>
+    
+    <item>
+      <title>TMAG-59</title>
+      <link>/posts/2017-10-23-tmag-59/</link>
+      <pubDate>Thu, 26 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2017-10-23-tmag-59/</guid>
+      <description>On October 19 I had the pleasure of presenting at the TMAG organization’s 59th semi-annual meeting. TMAG is the Information Technology Market Analysis Group–a collection of market researchers and data scientists from technology companies (e.g., Google, Intel, FaceBook, Microsoft, etc.).
+I told a story (with my co-author Jaya Ramaprasad of Microsoft) of how Jaya and I combined a variety of data sources to produce one single estimate of Microsoft’s market share in various server software categories.</description>
+    </item>
+    
+    <item>
+      <title>Home</title>
+      <link>/home/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/home/</guid>
+      <description>Welcome. Poke around. Explore. If you&amp;rsquo;ve got questions or suggestions for any of the tools and stories here, best to reach me by email. Code not found in R Markdown files on this site might be found at my Github page.</description>
+    </item>
+    
+    <item>
+      <title>License</title>
+      <link>/license/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/license/</guid>
+      <description>You can use this page to put a license on the contents of your blog, like so:
+ The MIT License (MIT)
+Copyright &amp;copy; 2017 Brent Johnsonbrent@centralmoment.com
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &amp;ldquo;Software&amp;rdquo;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</description>
+    </item>
+    
+  </channel>
+</rss>
