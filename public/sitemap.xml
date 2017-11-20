@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/posts/taming-noisy-data-through-bayesian-analysis-a-market-share-tracking-example-rmd/</loc>
+    <lastmod>2017-11-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/projects-2-rmd/</loc>
     <lastmod>2017-10-29T00:00:00+00:00</lastmod>
   </url>
@@ -19,12 +24,18 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2017-10-29T00:00:00+00:00</lastmod>
+    <lastmod>2017-11-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/hiearchical-bayes/</loc>
+    <lastmod>2017-11-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -44,7 +55,7 @@
   
   <url>
     <loc>/posts/</loc>
-    <lastmod>2017-10-26T00:00:00+00:00</lastmod>
+    <lastmod>2017-11-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -56,13 +67,19 @@
   
   <url>
     <loc>/categories/r/</loc>
-    <lastmod>2017-10-26T00:00:00+00:00</lastmod>
+    <lastmod>2017-11-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2017-10-26T00:00:00+00:00</lastmod>
+    <lastmod>2017-11-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/time-series-analysis/</loc>
+    <lastmod>2017-11-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
