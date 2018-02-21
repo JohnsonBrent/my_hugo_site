@@ -6,11 +6,19 @@
     <description>Recent content in Posts on Brent Johnson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <copyright>Copyright © 2017 Brent Johnson</copyright>
-    <lastBuildDate>Sun, 19 Nov 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 19 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Data Science Unplugged: Additive Boosting</title>
+      <link>/posts/data-science-unplugged-additive-boosting/</link>
+      <pubDate>Fri, 19 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/data-science-unplugged-additive-boosting/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Taming Noisy Data Through Bayesian Analysis - A Market Share Tracking Example</title>
@@ -28,8 +36,17 @@ I’ve been using Stan for most of my Bayesian analysis. And I can’t enough po
       <pubDate>Thu, 26 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>/posts/2017-10-23-tmag-59/</guid>
-      <description>On October 19 I had the pleasure of presenting at the TMAG organization’s 59th semi-annual meeting. TMAG is the Information Technology Market Analysis Group–a collection of market researchers and data scientists from technology companies (e.g., Google, Intel, FaceBook, Microsoft, etc.).
+      <description>On October 18, 2017 I had the pleasure of presenting at the TMAG organization’s 59th semi-annual meeting. TMAG is the Information Technology Market Analysis Group–a collection of market researchers and data scientists from technology companies (e.g., Google, Intel, FaceBook, Microsoft, etc.).
 I told a story (with my co-author Jaya Ramaprasad of Microsoft) of how Jaya and I combined a variety of data sources to produce one single estimate of Microsoft’s market share in various server software categories.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/posts/data-science-unplugged-additive-boosting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/data-science-unplugged-additive-boosting/</guid>
+      <description>Data Science Unplugged: Additive Boostingcode{white-space: pre;}if (window.hljs) {hljs.configure({languages: []});hljs.initHighlightingOnLoad();if (document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) {window.setTimeout(function() { hljs.initHighlighting(); }, 0);}}Data Science Unplugged: Additive BoostingAdditive boosting explained using simple codeBrent Johnson2018-01-19Data Science Unplugged⊕You can easily download the R Mardown version of this document and reproduce all my examples on your own. You may just need to install the rpart and rpart.</description>
     </item>
     
   </channel>

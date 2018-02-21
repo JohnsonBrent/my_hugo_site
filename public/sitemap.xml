@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/posts/data-science-unplugged-additive-boosting/</loc>
+    <lastmod>2018-01-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/posts/taming-noisy-data-through-bayesian-analysis-a-market-share-tracking-example-rmd/</loc>
     <lastmod>2017-11-19T00:00:00+00:00</lastmod>
   </url>
@@ -23,13 +28,23 @@
   </url>
   
   <url>
+    <loc>/posts/data-science-unplugged-additive-boosting/</loc>
+  </url>
+  
+  <url>
     <loc>/</loc>
-    <lastmod>2017-11-19T00:00:00+00:00</lastmod>
+    <lastmod>2018-01-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/data-science-unplugged/</loc>
+    <lastmod>2018-01-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -55,7 +70,7 @@
   
   <url>
     <loc>/posts/</loc>
-    <lastmod>2017-11-19T00:00:00+00:00</lastmod>
+    <lastmod>2018-01-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -67,13 +82,13 @@
   
   <url>
     <loc>/categories/r/</loc>
-    <lastmod>2017-11-19T00:00:00+00:00</lastmod>
+    <lastmod>2018-01-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2017-11-19T00:00:00+00:00</lastmod>
+    <lastmod>2018-01-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
