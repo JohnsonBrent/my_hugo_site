@@ -7,3 +7,6 @@ categories: ["R"]
 tags: ["Data Science Unplugged"]
 ---
 
+
+The file's been [moved here.](/files/2018-02-19-data-science-unplugged-additive-boosting.html)
+

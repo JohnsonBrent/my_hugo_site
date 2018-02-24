@@ -3,103 +3,99 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.centralmoment.com/posts/2018-02-20-data-science-unplugged-additive-boosting-content/</loc>
+    <loc>/posts/2018-02-20-data-science-unplugged-additive-boosting-content/</loc>
     <lastmod>2018-01-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.centralmoment.com/posts/taming-noisy-data-through-bayesian-analysis-a-market-share-tracking-example-rmd/</loc>
+    <loc>/posts/taming-noisy-data-through-bayesian-analysis-a-market-share-tracking-example-rmd/</loc>
     <lastmod>2017-11-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.centralmoment.com/projects-2-rmd/</loc>
+    <loc>/projects-2-rmd/</loc>
     <lastmod>2017-10-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.centralmoment.com/about/</loc>
+    <loc>/about/</loc>
     <lastmod>2017-10-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.centralmoment.com/posts/2017-10-23-tmag-59/</loc>
+    <loc>/posts/2017-10-23-tmag-59/</loc>
     <lastmod>2017-10-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.centralmoment.com/posts/2018-02-20-data-science-unplugged-additive-boosting-content/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.centralmoment.com/</loc>
+    <loc>/</loc>
     <lastmod>2018-01-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.centralmoment.com/categories/</loc>
+    <loc>/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.centralmoment.com/tags/data-science-unplugged/</loc>
+    <loc>/tags/data-science-unplugged/</loc>
     <lastmod>2018-01-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.centralmoment.com/tags/hiearchical-bayes/</loc>
+    <loc>/tags/hiearchical-bayes/</loc>
     <lastmod>2017-11-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.centralmoment.com/tags/hierarchical-bayes/</loc>
+    <loc>/tags/hierarchical-bayes/</loc>
     <lastmod>2017-10-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.centralmoment.com/home/</loc>
+    <loc>/home/</loc>
   </url>
   
   <url>
-    <loc>https://www.centralmoment.com/license/</loc>
+    <loc>/license/</loc>
   </url>
   
   <url>
-    <loc>https://www.centralmoment.com/posts/</loc>
+    <loc>/posts/</loc>
     <lastmod>2018-01-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.centralmoment.com/tags/presentations/</loc>
+    <loc>/tags/presentations/</loc>
     <lastmod>2017-10-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.centralmoment.com/categories/r/</loc>
+    <loc>/categories/r/</loc>
     <lastmod>2018-01-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.centralmoment.com/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2018-01-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.centralmoment.com/tags/time-series-analysis/</loc>
+    <loc>/tags/time-series-analysis/</loc>
     <lastmod>2017-11-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.centralmoment.com/tags/tmag/</loc>
+    <loc>/tags/tmag/</loc>
     <lastmod>2017-10-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
