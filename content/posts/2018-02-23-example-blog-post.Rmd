@@ -7,8 +7,7 @@ categories: []
 tags: []
 draft: true
 output:
-  blogdown::html_page:
-    css: "/css/tufte.css"
+  tufte::tufte_html
 ---
 
 
