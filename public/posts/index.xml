@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Brent Johnson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 19 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Example blog post</title>
+      <link>/posts/example-blog-post/</link>
+      <pubDate>Fri, 23 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/example-blog-post/</guid>
+      <description>IntroductionThe Tufte handout style is a style that Edward Tufte uses in his books and handouts. Tufte’s style is known for its extensive use of sidenotes, tight integration of graphics with text, and well-set typography. This style has been implemented in LaTeX and HTML/CSS1, respectively. We have ported both implementations into the tufte package. If you want LaTeX/PDF output, you may use the tufte_handout format for handouts, and tufte_book for books.</description>
+    </item>
     
     <item>
       <title>Data Science Unplugged: Additive Boosting</title>
