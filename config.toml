@@ -1,6 +1,7 @@
 baseurl = "https://www.centralmoment.com/"
+#baseurl = "/"
 theme = "cocoa-eh-hugo-theme"
-builddrafts = true
+builddrafts = false
 canonifyurls = true
 contentdir = "content"
 languageCode = "en-US"
@@ -46,9 +47,9 @@ foreground = "#181d2a"             # changes the R Markdown general text font co
 background = "#f9f9f9"
 background_dark = "#ffffe6"        # changes the background of code chunks. Tufte = #fffff8, Rstudio cobalt theme = #011e3a
 code = "#969896"                   # changes LHS code chunk font color, e.g., "fish <-" and summary(cars). I also like #6C6E58 (dk. gray)
-type = "#3E423A"                   # changes R commands like library()
+type = "#4B0082"                   # changes R commands like library()
 special = "#ffcb8d"
-value = "#417378"                  # changes values e.g., x <- 9999
+value = "#4B0082"                  # changes values e.g., x <- 9999
 statement = "#ff8e91"
 
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]

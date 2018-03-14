@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Github on Brent Johnson</title>
-    <link>/categories/github/</link>
+    <link>https://www.centralmoment.com/categories/github/</link>
     <description>Recent content in Github on Brent Johnson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 29 Oct 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/github/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.centralmoment.com/categories/github/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>gammaBuster: A package for Including Judgmental Inputs in a Gamma Distribution</title>
-      <link>/posts/gammabuster-a-package-for-including-judgmental-inputs-in-a-gamma-distribution/</link>
+      <link>https://www.centralmoment.com/posts/gammabuster-a-package-for-including-judgmental-inputs-in-a-gamma-distribution/</link>
       <pubDate>Sun, 29 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/posts/gammabuster-a-package-for-including-judgmental-inputs-in-a-gamma-distribution/</guid>
+      <guid>https://www.centralmoment.com/posts/gammabuster-a-package-for-including-judgmental-inputs-in-a-gamma-distribution/</guid>
       <description>I’ve created an R package over on GitHub to generate gamma distribution parameters from judgemental priors. Since the gamma distribution is the conjugate prior for the poisson, this package lets one include judgmental priors on the poisson. For example, I use this when working with a data table (which is poisson-multinomial) and I’ve got multiple data sources or client beliefs about the values in the table or their marginal totals.</description>
     </item>
     

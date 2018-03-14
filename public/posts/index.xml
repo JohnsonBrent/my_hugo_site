@@ -2,67 +2,58 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Brent Johnson</title>
-    <link>/posts/</link>
+    <link>https://www.centralmoment.com/posts/</link>
     <description>Recent content in Posts on Brent Johnson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Wed, 01 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Feb 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.centralmoment.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Example blog post using the modified cocoa theme with Tufte margin notes</title>
-      <link>/posts/example-blog-post/</link>
-      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/example-blog-post/</guid>
-      <description>/* Tufte CSS styles *//* Sidenotes, margin notes, figures, captions */.sidenote, .marginnote { float: right;clear: right;margin-right: -60%;margin-left: 0%;width: 50%;margin-top: 0;margin-bottom: 0;font-size: 1.0rem;line-height: 1.3;vertical-align: baseline;position: relative; }R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.</description>
-    </item>
     
     <item>
       <title>kimball: An R package for a Truncated Normal Distribution with judgemental parameters</title>
-      <link>/posts/kimball-an-r-package-for-a-truncated-normal-distribution-with-judgemental-parameters/</link>
+      <link>https://www.centralmoment.com/posts/kimball-an-r-package-for-a-truncated-normal-distribution-with-judgemental-parameters/</link>
       <pubDate>Thu, 22 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>/posts/kimball-an-r-package-for-a-truncated-normal-distribution-with-judgemental-parameters/</guid>
+      <guid>https://www.centralmoment.com/posts/kimball-an-r-package-for-a-truncated-normal-distribution-with-judgemental-parameters/</guid>
       <description>I’ve created an R package over on GitHub called “kimball” to generate life tables based on the truncated normal distribution that I’ve found very helpful in my statistics applications. I’m going to describe it here with a couple of examples that demonstrate its usefulness. In short, the Kimball distribution is perfect for reflecting judgmental input about a random variable that one believes is positive and vaguely normal or Gaussian were it not for a lower bound (i.</description>
     </item>
     
     <item>
       <title>Data Science Unplugged: Additive Boosting</title>
-      <link>/posts/2018-02-20-data-science-unplugged-additive-boosting-content/</link>
+      <link>https://www.centralmoment.com/posts/2018-02-20-data-science-unplugged-additive-boosting-content/</link>
       <pubDate>Fri, 19 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/posts/2018-02-20-data-science-unplugged-additive-boosting-content/</guid>
+      <guid>https://www.centralmoment.com/posts/2018-02-20-data-science-unplugged-additive-boosting-content/</guid>
       <description>The file’s been moved here.</description>
     </item>
     
     <item>
       <title>Taming Noisy Data Through Bayesian Analysis - A Market Share Tracking Example</title>
-      <link>/posts/taming-noisy-data-through-bayesian-analysis-a-market-share-tracking-example-rmd/</link>
+      <link>https://www.centralmoment.com/posts/taming-noisy-data-through-bayesian-analysis-a-market-share-tracking-example-rmd/</link>
       <pubDate>Sun, 19 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/posts/taming-noisy-data-through-bayesian-analysis-a-market-share-tracking-example-rmd/</guid>
+      <guid>https://www.centralmoment.com/posts/taming-noisy-data-through-bayesian-analysis-a-market-share-tracking-example-rmd/</guid>
       <description>Here’s a white paper I published on IPR’s web site. It’s somewhat similar to my presentation to the TMAG group at around the same time. But this document here goes into a bit more detail on the model structure.
 I’ve been using Stan for most of my Bayesian analysis. And I can’t enough positive things about Richard McElreath’s rethinking package which is a front-end for Stan. McElreath’s book of the same name is outstanding as well.</description>
     </item>
     
     <item>
       <title>gammaBuster: A package for Including Judgmental Inputs in a Gamma Distribution</title>
-      <link>/posts/gammabuster-a-package-for-including-judgmental-inputs-in-a-gamma-distribution/</link>
+      <link>https://www.centralmoment.com/posts/gammabuster-a-package-for-including-judgmental-inputs-in-a-gamma-distribution/</link>
       <pubDate>Sun, 29 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/posts/gammabuster-a-package-for-including-judgmental-inputs-in-a-gamma-distribution/</guid>
+      <guid>https://www.centralmoment.com/posts/gammabuster-a-package-for-including-judgmental-inputs-in-a-gamma-distribution/</guid>
       <description>I’ve created an R package over on GitHub to generate gamma distribution parameters from judgemental priors. Since the gamma distribution is the conjugate prior for the poisson, this package lets one include judgmental priors on the poisson. For example, I use this when working with a data table (which is poisson-multinomial) and I’ve got multiple data sources or client beliefs about the values in the table or their marginal totals.</description>
     </item>
     
     <item>
       <title>TMAG-59</title>
-      <link>/posts/2017-10-23-tmag-59/</link>
+      <link>https://www.centralmoment.com/posts/2017-10-23-tmag-59/</link>
       <pubDate>Thu, 26 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/posts/2017-10-23-tmag-59/</guid>
+      <guid>https://www.centralmoment.com/posts/2017-10-23-tmag-59/</guid>
       <description>On October 18, 2017 I had the pleasure of presenting at the TMAG organization’s 59th semi-annual meeting. TMAG is the Information Technology Market Analysis Group–a collection of market researchers and data scientists from technology companies (e.g., Google, Intel, FaceBook, Microsoft, etc.).
 I told a story (with my co-author Jaya Ramaprasad of Microsoft) of how Jaya and I combined a variety of data sources to produce one single estimate of Microsoft’s market share in various server software categories.</description>
     </item>
