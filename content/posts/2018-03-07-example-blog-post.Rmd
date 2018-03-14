@@ -1,12 +1,12 @@
 ---
-title: Example blog post using the modified cocoa theme with Tufte margin notes
+title: Example blog post using the modified cocoa-eh-hugo-theme with Tufte margin notes - three
 author: Brent Johnson
-#date: "`r Sys.Date()`"
-date: '2025-01-01'
+date: "`r Sys.Date()`"
+#date: '2025-01-01'
 slug: example-blog-post
 categories: []
 tags: []
-draft: true
+draft: TRUE
 ---
 <style type="text/css">
 
