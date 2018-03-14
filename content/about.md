@@ -1,6 +1,6 @@
 +++
 date = "2017-10-27"
-title = "About"
+title = "about"
 +++
 
 In my day job, I work at [International Planning & Research](https://iprcorp.com/) as a project director. I manage teams that solve client market analysis and data science problems. Example engagements include price optimization, share/performance tracking, product portfolio decision-making, prospect identification, customer clustering, text mining, forecasting--and more. Nothing pleases me more than discovering interesting stories from complex data sets and sharing those stories with clients.

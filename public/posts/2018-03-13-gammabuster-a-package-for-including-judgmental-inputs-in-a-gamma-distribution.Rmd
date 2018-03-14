@@ -1,5 +1,5 @@
 ---
-title: 'gammaBuster: A Package for Incorporating Judgmental Inputs into a Gamma Distribution'
+title: 'gammaBuster: An R Package for Incorporating Judgmental Inputs into a Gamma Distribution'
 author: Brent Johnson
 date: '2017-10-29'
 slug: gammabuster-a-package-for-including-judgmental-inputs-in-a-gamma-distribution

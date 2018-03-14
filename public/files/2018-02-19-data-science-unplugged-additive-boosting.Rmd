@@ -4,10 +4,10 @@ subtitle: "Additive boosting explained using simple code"
 author: "Brent Johnson"
 date: "2018-01-19"
 output:
-  tufte::tufte_html: default
   tufte::tufte_handout:
     citation_package: natbib
     latex_engine: xelatex
+  tufte::tufte_html: default
   tufte::tufte_book:
     citation_package: natbib
     latex_engine: xelatex
@@ -130,7 +130,7 @@ The `alpha` term in the code above also informs the weights given to each observ
 
 ``` {r first.iteration, echo=FALSE, fig.margin = TRUE, fig.cap = "AdaBoost's first tree starts off with equal weights. Predicted values of 0 for Y go to the left; Predicted values of 1 go to the right. The true proportions are described inside the boxes, e.g., 49% of all `X$Y` values are both predicted to equal zero and have a true value of 0.", fig.width=3.5, fig.height=3.5, cache=TRUE, message=FALSE}
 par(bg="#fffff8")
-prp(models[[1]], type=2, extra=101, shadow.col="grey", box.palette = "Blues")
+rpart.plot::prp(models[[1]], type=2, extra=101, shadow.col="grey", box.palette = "Blues")
 ````
 To make this clear, I plot the first tree or iteration generated from the above AdaBoost example.  This tree splits on variable `X9`. That is, when starting with equal weight given to all data records, the best variable for splitting successes and failures is `X9`. In this iteration, the model predicts all observations for which X9 >= -1.2 as failures (Y=0).  This makes up 88% of the sample. And the model predicts all other observations (the remaining 12% of the sample) as successes (Y=1). The error for this first iteration is 58.8% (which is .49 + .098) which is somewhat higher than chance prediction.  
 

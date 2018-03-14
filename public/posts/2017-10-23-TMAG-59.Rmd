@@ -1,5 +1,5 @@
 ---
-title: "TMAG-59"
+title: "My Presentation at the Technology Marketing Analysis Group Meeting (TMAG-59)"
 author: "Brent Johnson"
 date: 2017-10-26
 categories: ["R"]
