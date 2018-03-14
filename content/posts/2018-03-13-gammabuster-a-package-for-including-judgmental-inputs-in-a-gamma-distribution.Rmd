@@ -1,0 +1,36 @@
+---
+title: 'GammaBuster: A package for Including Judgmental Inputs in a Gamma Distribution'
+author: Brent Johnson
+date: '2017-10-29'
+slug: gammabuster-a-package-for-including-judgmental-inputs-in-a-gamma-distribution
+categories: [Github]
+tags: []
+---
+
+I've created an R package over on GitHub to generate [gamma distribution parameters from judgemental priors](https://github.com/JohnsonBrent/gammabuster). Since the gamma distribution is the conjugate prior for the poisson, this package lets one include judgmental priors on the poisson. For example, I use this when working with a data table (which is poisson-multinomial) and I've got multiple data sources or client beliefs about the values in the table or their marginal totals.
+
+Feel free to comment on the [GitHub page](https://github.com/JohnsonBrent/gammabuster) or [via email](brent@centralmoment.com).
+
+## gammabuster
+
+The gammabuster package contains two functions that translate judgmental estimates about a random variable into the gamma distribution parameters consistent with that judgement. This is helpful because the parameters of a gamma distribution--its shape and scale--don't have a real-world interpretation. The lack of a real-world interpretation makes it hard to elicit judgmental estimates about them. However, it's relatively straightforward to elicit judgments about the likely upper and lower bounds of a distribution or about the mean and range of the distribution. The gammabuster package does just this. It takes judgmental descriptions about a gamma distribution and converts the needed parameter estimates.
+
+## Installation
+
+You can install gammabuster from GitHub with:
+
+```{r gh-installation, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("JohnsonBrent/gammabuster")
+```
+
+## Example
+
+Here's one example. Suppose one has elicited judgments that the range of a random variable lies between 0 and 5. Assuming the random variable is strictly positive and continuous within this space, a gamma might be the appropriate distribution. If so, the following function generates the gamma parameters consistent with the judgement:
+
+```{r example, echo = TRUE, eval=FALSE}
+GbusterMinMax(0, 5)
+```
+
+There are more examples and a deeper explanation in the vignette. 
+

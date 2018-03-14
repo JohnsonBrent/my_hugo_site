@@ -7,3 +7,7 @@ categories: ["R"]
 tags: ["Data Science Unplugged"]
 ---
 
+
+
+I've moved the Data Science Unplugged articles to [another location](/files/data-science-unplugged-additive-boosting.html). Access it there.
+

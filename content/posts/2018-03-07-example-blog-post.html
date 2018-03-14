@@ -1,0 +1,72 @@
+---
+title: Example blog post
+author: Brent Johnson
+date: '2018-03-07'
+slug: example-blog-post
+categories: []
+tags: []
+draft: true
+---
+
+
+
+<style type="text/css">
+
+
+/* Tufte CSS styles */
+/* Sidenotes, margin notes, figures, captions */
+
+.sidenote, .marginnote { 
+                         float: right;
+                         clear: right;
+                         margin-right: -60%;
+                         margin-left: 0%;
+                         width: 50%;
+                         margin-top: 0;
+                         margin-bottom: 0;
+                         font-size: 1.0rem;
+                         line-height: 1.3;
+                         vertical-align: baseline;
+                         position: relative; }
+
+</style>
+<div id="r-markdown" class="section level2">
+<h2>R Markdown</h2>
+<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
+<p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
+<pre class="r"><code>summary(cars)</code></pre>
+<pre><code>##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00</code></pre>
+<pre class="r"><code>library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>fish &lt;- 99999</code></pre>
+</div>
+<div id="sidenotes" class="section level2">
+<h2>Sidenotes</h2>
+<p>One of the most prominent and distinctive features of this style is the extensive use of sidenotes. There is a wide margin to provide ample room for sidenotes and small figures. Any use of a footnote will automatically be converted to a sidenote. <a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
+<p>If you’d like to place ancillary information in the margin without the sidenote mark (the superscript number), you can use the <code>margin_note()</code> function from <strong>tufte</strong> in an inline R expression. <label for="tufte-mn-" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-" class="margin-toggle"><span class="marginnote">This is a margin note. Notice that there is no number preceding the note.</span> This function does not process the text with Pandoc, so Markdown syntax will not work here. If you need to write anything in Markdown syntax, please use the <code>marginfigure</code> block described previously.</p>
+</div>
+<div id="including-plots" class="section level2">
+<h2>Including Plots</h2>
+<p>You can also embed plots, for example:</p>
+<p><img src="/posts/2018-03-07-example-blog-post_files/figure-html/pressure-1.png" width="672" /></p>
+<p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>This is a sidenote that was entered using a footnote.<a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
