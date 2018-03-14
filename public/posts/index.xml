@@ -6,18 +6,27 @@
     <description>Recent content in Posts on Brent Johnson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Wed, 07 Mar 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Jan 2025 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Example blog post</title>
+      <title>Example blog post using the modified cocoa theme with Tufte margin notes</title>
       <link>/posts/example-blog-post/</link>
-      <pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
       
       <guid>/posts/example-blog-post/</guid>
       <description>/* Tufte CSS styles *//* Sidenotes, margin notes, figures, captions */.sidenote, .marginnote { float: right;clear: right;margin-right: -60%;margin-left: 0%;width: 50%;margin-top: 0;margin-bottom: 0;font-size: 1.0rem;line-height: 1.3;vertical-align: baseline;position: relative; }R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.</description>
+    </item>
+    
+    <item>
+      <title>kimball: An R package for a Truncated Normal Distribution with judgemental parameters</title>
+      <link>/posts/kimball-an-r-package-for-a-truncated-normal-distribution-with-judgemental-parameters/</link>
+      <pubDate>Thu, 22 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/kimball-an-r-package-for-a-truncated-normal-distribution-with-judgemental-parameters/</guid>
+      <description>I’ve created an R package over on GitHub called “kimball” to generate life tables based on the truncated normal distribution that I’ve found very helpful in my statistics applications. I’m going to describe it here with a couple of examples that demonstrate its usefulness. In short, the Kimball distribution is perfect for reflecting judgmental input about a random variable that one believes is positive and vaguely normal or Gaussian were it not for a lower bound (i.</description>
     </item>
     
     <item>
@@ -26,9 +35,7 @@
       <pubDate>Fri, 19 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/posts/2018-02-20-data-science-unplugged-additive-boosting-content/</guid>
-      <description>&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD
-I’ve moved the Data Science Unplugged articles to another location. Access it there.The file’s been moved here. &amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt; afa5242634e8cc38f4e79a3fc8b3523ad7aeef97
-</description>
+      <description>The file’s been moved here.</description>
     </item>
     
     <item>
@@ -42,7 +49,7 @@ I’ve been using Stan for most of my Bayesian analysis. And I can’t enough po
     </item>
     
     <item>
-      <title>GammaBuster: A package for Including Judgmental Inputs in a Gamma Distribution</title>
+      <title>gammaBuster: A package for Including Judgmental Inputs in a Gamma Distribution</title>
       <link>/posts/gammabuster-a-package-for-including-judgmental-inputs-in-a-gamma-distribution/</link>
       <pubDate>Sun, 29 Oct 2017 00:00:00 +0000</pubDate>
       

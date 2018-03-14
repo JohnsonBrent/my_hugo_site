@@ -1,7 +1,8 @@
 ---
-title: Example blog post
+title: Example blog post using the modified cocoa theme with Tufte margin notes
 author: Brent Johnson
-date: '2018-03-07'
+#date: "`r Sys.Date()`"
+date: '2025-01-01'
 slug: example-blog-post
 categories: []
 tags: []

@@ -1,0 +1,346 @@
+---
+title: 'kimball: An R package for a Truncated Normal Distribution with judgemental
+  parameters'
+author: Brent Johnson
+date: '2018-02-22'
+slug: kimball-an-r-package-for-a-truncated-normal-distribution-with-judgemental-parameters
+categories: []
+tags: []
+---
+
+
+
+<p>I’ve created an R package over on GitHub called <a href="https://github.com/JohnsonBrent/kimball">“kimball”</a> to generate life tables based on the truncated normal distribution that I’ve found very helpful in my statistics applications. I’m going to describe it here with a couple of examples that demonstrate its usefulness. In short, the Kimball distribution is perfect for reflecting judgmental input about a random variable that one believes is positive and vaguely normal or Gaussian were it not for a lower bound (i.e., that is left-truncated). But you can work with this distribution and see. Is it an improvement over others? Did it help you solve a key data science problem? If so, please respond back with your story.</p>
+<p>There are well established algorithms and R packages for implementing a truncated normal distribution, i.e., a bell-shaped density that’s truncated (or censored) on the left and/or right. One good implementation is in the <a href="https://cran.r-project.org/web/packages/truncnorm/index.html">truncnorm</a> R package. This post introduces the Kimball distribution as an alternative formulation of the left-truncated normal distribution. What’s unique about the Kimball distribution is that its two parameters are completely intuitive. One specifies a Kimball distribution using just a mean and a maximum parameter–as in the distribution’s maximum likely value or the point beyond which which the probability of an observation is negligible. By contrast, a truncated normal distribution requires a mean and standard deviation or variance parameter.</p>
+<p>In the normal distribution, the mean parameter is straightforward. But the standard deviation (or variance) parameter is less so. Of course one learns the definition of a standard deviation in Statistics 101. It’s defined as the square root of the average squared deviation between each observed value and the mean. But most students are seldom able to think about observed phenomena in such terms. Few data scientists have a good intuitive sense for square roots of average squared deviations. In fact, other than when one of the necessary parameters is the mean, parameter interpretability isn’t a common feature of most probability distributions. The parameters of most common probability distributions don’t all have an easy real-world, behavioral interpretation. However, all else equal, I much prefer the distributions that do.</p>
+<p>Enter Kimball’s set of life tables. First articulated in 1947 by Bradford Kimball<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> (note he didn’t name the distribution after himself. I’m doing that.) and then revisited by Oates and Spencer (1962)<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>, the Kimball has largely been forgotten. What makes it compelling and worth reconsidering is that it’s entirely specified by just a mean and a maximum. Like all distributions, the Kimball has a variance–which one can calculate by minimizing a function determined by its mean and maximum values. (See Oates &amp; Spencer’s (1962) equation #7 for the variance formula). But for the Kimball, the variance is a descriptive term only. One specifies the Kimball distribution simply in terms of its mean and maximum.</p>
+<div id="some-concrete-examples" class="section level2">
+<h2>Some concrete examples</h2>
+<p>Here below are several examples of the Kimball distribution’s probability density. Following the naming convention for other probability distributions in R, I use the <code>dkimball()</code> function to compute the probability density for a given set of parameters.</p>
+<pre class="r"><code>library(dplyr)
+library(kimball)
+x &lt;- seq(from=1, to=12, by=.25)
+density1 &lt;- dkimball(x, 6, 2)
+density2 &lt;- dkimball(x, 4, 2)
+density3 &lt;- dkimball(x, 12, 6)
+combined1 &lt;- data.frame(x, density1, density2, density3)</code></pre>
+<p>And I use <code>pkimball()</code> for the corresponding cumulative distribution function or CDF:</p>
+<pre class="r"><code>cumulative1 &lt;- pkimball(x, 6, 2)
+cumulative2 &lt;- pkimball(x, 4, 2)
+cumulative3 &lt;- pkimball(x, 12, 6)
+combined2 &lt;- data.frame(x, cumulative1, cumulative2, cumulative3)</code></pre>
+<p><img src="/posts/2018-03-13-kimball-an-r-package-for-a-truncated-normal-distribution-with-judgemental-parameters_files/figure-html/arrange.kimball-1.png" width="672" /> Kimball (1947), followed by Oates and Spencer (1962), developed this distribution to estimate life tables. For example, the kimball density could describe the distribution of human lifespans. In this later application (life tables and mortality rates) the Kimball competes with the much more commonly used <a href="https://en.wikipedia.org/wiki/Gompertz_distribution">Gompertz distribution</a>. Similarly, the Kimball can be applied to an estimate of the probability of a machine part’s failure, for example. In this case, it’s an alternative to the <a href="https://en.wikipedia.org/wiki/Weibull_distribution">Weibull</a> distribution. But again, the Gompertz distribution’s two parameters (eta and b) and the Weibull’s parameters (lambda and k) are somewhat opaque. They are required inputs but don’t have an easy interpretation..</p>
+</div>
+<div id="the-kimball-distribution-for-replacement-rates" class="section level2">
+<h2>The Kimball distribution for replacement rates</h2>
+<p>The benefit of a distribution with interpretable parameters is that it lends itself to estimation via easily elicited inputs. One can examine easily collected data or judgments and use these to estimate the Kimball’s parameters. For example, per the simple, publicly available survey data below, a mobile phone has a median expected life of between 1.5 to 2 years (in both the US and in all countries). Looking a little more closely and mentally projecting the curve below further to the right (since the last couple of years are grouped in the chart), it appears that perhaps the expected maximum life of a mobile phone is around 6 years.</p>
+<center>
+<a href="https://www.statista.com/statistics/241036/ownership-time-length-of-current-mobile-phone-until-replacement/"><img src="/img/mobile%20phone%20replacement%20curve.jpg" alt="Survey data on expected mobile phone life." style="width:80.0%" /></a>
+</center>
+<p>It’s easy to fit a corresponding truncated normal probability density to these data above using the <code>dkimball</code> function:</p>
+<pre class="r"><code>time &lt;- c(0, .5, 1, 1.5, 2, 3, 4, 5, 6)
+kimball.dens &lt;- dkimball(time,6,2) 
+
+# group last 3 periods to match the given chart
+char.time &lt;- data.frame(time=c(0, .5, 1, 1.5, 2, 3, &quot;4+&quot;))
+kimball.dens.sum &lt;- c(kimball.dens[1:6],sum(kimball.dens[7:9])) 
+
+#normalize due to irregular intervals in &#39;time&#39;
+kimball.dens.sum &lt;- kimball.dens.sum / sum(kimball.dens.sum)</code></pre>
+<p>Here’s the above Kimball density overlayed with the observed mobile phone survey data:</p>
+<center>
+<a href="https://www.statista.com/statistics/241036/ownership-time-length-of-current-mobile-phone-until-replacement/"><img src="/img/mobile%20phone%20replacement%20curve%20(fitted).jpg" alt="The Kimball density function estimated using survey data on expected mobile phone life." style="width:80.0%" /></a>
+</center>
+<p>Note that I’m not using a formal parametric estimation method, such as maximum likelihood, to fit the kimball distribution to these data. I could indeed do so if I wanted to take the time. However, the parameters for the kimball distribution are already given to me in the observed statistics in the original image above. The parameters for the kimball are straightway handed to me in the everyday language one uses to describe the replacement age of durable products and other phenomena.</p>
+<p>One can compare the Kimball density to the density from the truncnorm package–another implementation of the truncated normal distribution. Optimizing <code>dtruncnorm()</code> to achieve the same fit as <code>dkimball()</code> above yields a mean and standard deviation for dtruncnorm of 1.9 and 1.1, respectively. As seen (or actually not seen!) in the image below, the two distributions mimic each other exactly such that their lines are indistinguishable. But again, one can judgmentally estimate the Kimball version of the truncated normal distribution. For the Truncnorm version one requires other methods to obtain the best-fitting standard deviation.</p>
+<pre class="r"><code>library(truncnorm)
+truncnorm.dens &lt;- dtruncnorm(time,a=0,b=6, 1.9, 1.1) 
+
+# group last 3 periods to match the given chart
+truncnorm.dens &lt;- c(truncnorm.dens[1:6],sum(truncnorm.dens[7:9]))
+
+# normalize due to irregular intervals in &#39;time&#39;
+truncnorm.dens &lt;- truncnorm.dens / sum(truncnorm.dens)                              </code></pre>
+<center>
+<img src="/posts/2018-03-13-kimball-an-r-package-for-a-truncated-normal-distribution-with-judgemental-parameters_files/figure-html/truncnorm.kimball.comparison-1.png" width="576" style="display: block; margin: auto;" />
+</center>
+</div>
+<div id="a-replacement-rate-application" class="section level2">
+<h2>A replacement rate application</h2>
+<p>To extend the mobile phone example above, I sometimes use the kimball distribution to estimate replacement sales of consumer or business products If one knows, say, the total number of mobile phones sold in a given year, the kimball distribution (applied retrospectively) enables an estimate of the replacement sales volume. For example, here below is publicly <a href="https://www.statista.com/statistics/271539/worldwide-shipments-of-leading-smartphone-vendors-since-2007/">available data</a> showing world-wide historic mobile phone sales (in millions).<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">year</th>
+<th align="right">shipments</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">2007</td>
+<td align="right">122.36</td>
+</tr>
+<tr class="even">
+<td align="right">2008</td>
+<td align="right">151.40</td>
+</tr>
+<tr class="odd">
+<td align="right">2009</td>
+<td align="right">173.50</td>
+</tr>
+<tr class="even">
+<td align="right">2010</td>
+<td align="right">304.70</td>
+</tr>
+<tr class="odd">
+<td align="right">2011</td>
+<td align="right">494.60</td>
+</tr>
+<tr class="even">
+<td align="right">2012</td>
+<td align="right">725.30</td>
+</tr>
+<tr class="odd">
+<td align="right">2013</td>
+<td align="right">1019.50</td>
+</tr>
+<tr class="even">
+<td align="right">2014</td>
+<td align="right">1301.70</td>
+</tr>
+<tr class="odd">
+<td align="right">2015</td>
+<td align="right">1437.20</td>
+</tr>
+<tr class="even">
+<td align="right">2016</td>
+<td align="right">1470.60</td>
+</tr>
+<tr class="odd">
+<td align="right">2017</td>
+<td align="right">1468.10</td>
+</tr>
+</tbody>
+</table>
+<p>And here’s how one might work with these data in practice and apply the kimball distribution to discover a richer story. I start the code chunk below by defining a function to put lagged values of total shipments into separate variables/columns which I name <code>shipments1</code>, <code>shipments2</code>, etc. And I save these lagged mobile phone shipment values inside a data frame called <code>lagged.shipments</code>. But note that the first variable inside <code>lagged.shipments</code> isn’t a lagged value per se but is the current period’s sales. When it comes to products like mobile phones, there’s usually some small fraction of product that gets replaced within the same year it was purchased (perhaps due to breakage or returns).</p>
+<p>I next take the replacement densities (computed in the code chunk above) and insert this inside the <code>mapply()</code> function. The <code>mapply</code> function multiplies my 7-column matrix of lagged sales history (<code>lagged.shipments</code>) by the 7-element vector of replacement probabilities (<code>replacement.schedule</code>).</p>
+<pre class="r"><code># create a function to lag variable x a total of n times and name it with a prefix--keeping 
+# the original variable. This function creates n lags. Hence, it returns n+1 columns (including original).
+f &lt;- function(x, n, pad, prefix=&quot;lag&quot;) {
+  if(!missing(pad)) {
+    X &lt;- c(rep(pad, n), x)
+  }
+  y &lt;- data.frame(embed(X, n+1))
+  names(y) &lt;- c(gsub(&#39;.*\\$&#39;, &#39;&#39;, deparse(substitute(x))), paste(prefix, seq(1:(n)), sep=&quot;&quot;))
+  return(y)
+}
+
+# apply above function and create SIX lagged shipment values (plus current period)
+lagged.shipments &lt;- f(smartphone$shipments, 6, 0, &quot;shipments&quot;)
+
+# define vector of replacement probabilities given avg life=2 and maxlife=6
+time &lt;- seq(0, 6)
+kimball.dens &lt;- dkimball(time,6,2)
+replacement.schedule &lt;- kimball.dens / sum(kimball.dens)
+
+# compute estimateed replacement sales
+smartphone$replacements &lt;- rowSums(mapply(`*`, lagged.shipments, replacement.schedule))</code></pre>
+<p>The result is an estimate of replacement mobile phone sales. Note that in the table below I also calculate replacement sales as a percentage of total sales. And I compute first-time sales by subtracting replacement sales from shipments.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">year</th>
+<th align="center">shipments</th>
+<th align="center">replacements</th>
+<th align="center">replacement share</th>
+<th align="center">first-time sales</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">2007</td>
+<td align="center">122.36</td>
+<td align="center">10.17</td>
+<td align="center">8.3%</td>
+<td align="center">112.19</td>
+</tr>
+<tr class="even">
+<td align="center">2008</td>
+<td align="center">151.40</td>
+<td align="center">44.81</td>
+<td align="center">29.6%</td>
+<td align="center">106.59</td>
+</tr>
+<tr class="odd">
+<td align="center">2009</td>
+<td align="center">173.50</td>
+<td align="center">99.01</td>
+<td align="center">57.1%</td>
+<td align="center">74.49</td>
+</tr>
+<tr class="even">
+<td align="center">2010</td>
+<td align="center">304.70</td>
+<td align="center">153.5</td>
+<td align="center">50.4%</td>
+<td align="center">151.2</td>
+</tr>
+<tr class="odd">
+<td align="center">2011</td>
+<td align="center">494.60</td>
+<td align="center">225.58</td>
+<td align="center">45.6%</td>
+<td align="center">269.02</td>
+</tr>
+<tr class="even">
+<td align="center">2012</td>
+<td align="center">725.30</td>
+<td align="center">350.17</td>
+<td align="center">48.3%</td>
+<td align="center">375.13</td>
+</tr>
+<tr class="odd">
+<td align="center">2013</td>
+<td align="center">1019.50</td>
+<td align="center">535.43</td>
+<td align="center">52.5%</td>
+<td align="center">484.07</td>
+</tr>
+<tr class="even">
+<td align="center">2014</td>
+<td align="center">1301.70</td>
+<td align="center">770.72</td>
+<td align="center">59.2%</td>
+<td align="center">530.98</td>
+</tr>
+<tr class="odd">
+<td align="center">2015</td>
+<td align="center">1437.20</td>
+<td align="center">1027.11</td>
+<td align="center">71.5%</td>
+<td align="center">410.09</td>
+</tr>
+<tr class="even">
+<td align="center">2016</td>
+<td align="center">1470.60</td>
+<td align="center">1248.93</td>
+<td align="center">84.9%</td>
+<td align="center">221.67</td>
+</tr>
+<tr class="odd">
+<td align="center">2017</td>
+<td align="center">1468.10</td>
+<td align="center">1388.65</td>
+<td align="center">94.6%</td>
+<td align="center">79.45</td>
+</tr>
+</tbody>
+</table>
+<p>Applying the kimball function like this allows the following observations:</p>
+<ul>
+<li>Fewer mobile phones are being sold to first-time buyers over time.</li>
+<li>Replacement sales are a growing share of the market. That is, an increasing share of customers are on their second, third, or fourth, etc. mobile phone.</li>
+<li>The market for mobile phones is close to saturation. Unless something new happens, sales growth of mobile phones is likely to continue to slow–just like it did starting in 2017.</li>
+</ul>
+<p>Granted, these observations rest on a lot of assumptions. I’m first assuming that the mobile phone replacement rate is constant over this entire time period. A longer average life earlier in time would result in larger pool of first-time buyers today and the market might not be quite so close to saturation after all. In addition, the potential pool of first-time buyers could possibly expand if the price and feature sets of mobile phones improves such that they become more affordable or more attractive.</p>
+<p>The point of this example is to show how the Kimball distribution allows an easy way to incorporate judgmental AND analytic inputs about a consumer or business product’s replacement rate–all in the context of easily understood parameters–the mean and maximum life. ## Limitations</p>
+<p>There are some limitations and parameter domain restrictions on the Kimball-related functions in this package. The Kimball functions will generate warnings and/or fail to provide good estimates if the user violates these restrictions.</p>
+<p>Regarding domain restrictions on the parameters, there are logical restrictions on the ratio between the maximum and the mean parameter. By definition, this maximum-to-mean ratio is bounded on the lower end by 1 since the mean population value must lie below the maximum population value. Likewise, there’s a boundary on the upper end of the ratio (a maximum well in excess of the mean) beyond which the Kimball’s functions become undefined. Oates &amp; Spencer’s (1962) tables place the domain for the maximum-to-mean ratio between 1.22 and 4.88. In other words, the population maximum ought not be lower than 22 percent above the population mean and no higher than nearly 5 times the mean.</p>
+<p>Oates &amp; Spencer (1962) rationalize this by observing that in most survey or engineering applications, the user will rarely need to fit a truncated normal to populations with a maximum-to-mean ratio outside this range. And these restrictions rarely pose a problem in practice. A Kimball distribution fit with a <code>maximum/mean</code> ratio below 2 is nearly symmetric and the data my be better fit using a non-truncated normal distribution. In this case, <code>dnorm()</code> may be more appropriate than <code>dkimball</code>. Moreover, <code>dnorm()</code> is most certainly more computationally efficient. And at the other extreme, attempting to fit a Kimball distribution with a <code>maximum/mean</code> ratio above 4 results in a highly skewed distribution. In that case, a negative exponential distribution (e.g., <code>dexp()</code>) or gamma distribution (e.g., <code>dgamma()</code>) is likely more appropriate and more efficient than <code>dkimball</code>.</p>
+<p>In my implementation, the Kimball functions will still return a value if the maximum-to-mean ration exceeds the recommended domain (1.22 &lt; x &lt; 4.88), but the warning should encourage the user to check the result and one’s data assumptions.</p>
+<p>My implementation adopts yet another assumption expressed by Oates &amp; Spencer (1962). In the Kimball distribution, the maximum parameter is defined as the point at which it’s expected that only 1 unit out of 1,000 exists in the population. This is an intuitive assumption in practice, but it creates the condition wherein the Kimball’s cumulative distribution doesn’t resolve to precisely 1.0. Instead, it resolves to 1.001. Therefore, technically speaking, the Kimball distribution function is only an <em>approximate</em> probability distribution. Kimball (1947) even refers to his work merely as a “system of life tables” and not a formal distribution.</p>
+<p>Finally, I don’t allow negative population values–and hence, no negative mean or maximum parameter values. The assumed population domain for the Kimball is strictly positive.</p>
+</div>
+<div id="modifying-the-kimball-for-a-non-zero-lower-bound" class="section level2">
+<h2>Modifying the Kimball for a non-zero lower bound</h2>
+<p>The original Kimball distribution also assumes a minimum population value of zero (x &gt;= 0) and a lower bound other than zero is not permitted. This assumption goes back to Kimball’s (1947) work application to life tables in which a zero lower bound is a reasonable assumption. After all, no species ever lives a <em>negative</em> number of months or years. And in my implementation, zero is the default minimum when specifying any of the Kimball functions. However, I include an option to over-ride this minimum assumption. Within each function’s options, one can specify a non-zero (but still positive) minimum if desired. Here are some examples:</p>
+<pre class="r"><code>x &lt;- seq(from=1, to=10, by=2)
+dkimball(x, 6, 3, min=1)
+#&gt; [1] 2.447264e-02 4.884809e-01 2.215891e-02 2.284458e-06 5.352441e-13
+
+x &lt;- seq(from=100, to=1000, by=100)
+pkimball(x, 1000, 300, 100)
+#&gt;  [1] 0.6081542 0.9003049 1.1732047 1.3801143 1.5074440 1.5710406 1.5968199
+#&gt;  [8] 1.6053002 1.6075639 1.6080542</code></pre>
+<p>Removing the restriction of a zero minimum makes the Kimball distribution a natural fit for yet more creative applications.</p>
+</div>
+<div id="the-kimball-distribution-for-price-band-estimation" class="section level2">
+<h2>The Kimball distribution for price-band estimation</h2>
+<p>Another task with which I am sometimes faced is to estimate the distribution of prices for a given product. For example, a client may provide me with research (or an assumption) telling me the average price of a computer server is around $2,250, the minimum price for a stripped down version is $1,500 and the maximum price for a richly configured workplace server–one with lots of memory and processors–is $4,000. The client shares all this information with a desire to know the likely share of servers sold in $250 price bands Experience tells me that such price distributions often resemble a truncated normal distribution. That is, there’s a sharp lower bound below which no vendor prices their products. Also, most customers aren’t interested in the lowest-price products. Such products often don’t have enough features. And at the other extreme, there’s often a long tail reflecting a gradual decline in the number of products sold at ever increasing prices and feature sets. This reflects the fact that highly priced products are often geared towards niche uses. The Kimball function is ideal given this scenario and the limited information that I usually have about the population. The <code>dkimball()</code> function solves this problem rather easily. Here’s the Kimball density with precisely these parameters:</p>
+<pre class="r"><code># specify the ranges
+price.ranges &lt;- seq(from=1500, to=4000, by=250)
+
+# compute the densities
+price.densities &lt;- dkimball(price.ranges, 4000, 2250, 1500)
+price.probabilities &lt;- price.densities / sum(price.densities)</code></pre>
+<p><img src="/posts/2018-03-13-kimball-an-r-package-for-a-truncated-normal-distribution-with-judgemental-parameters_files/figure-html/kimball.density.servers.plot-1.png" width="672" /> And here’s a table version of the above probabilities and price bands. For example, I’ve estimated that 21% of all servers are sold in the $2250 - $2,500 price range.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">price</th>
+<th align="center">probabilties</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">$1,500</td>
+<td align="center">8.6%</td>
+</tr>
+<tr class="even">
+<td align="center">$1,750</td>
+<td align="center">15.0%</td>
+</tr>
+<tr class="odd">
+<td align="center">$2,000</td>
+<td align="center">20.3%</td>
+</tr>
+<tr class="even">
+<td align="center">$2,250</td>
+<td align="center">21.1%</td>
+</tr>
+<tr class="odd">
+<td align="center">$2,500</td>
+<td align="center">17.0%</td>
+</tr>
+<tr class="even">
+<td align="center">$2,750</td>
+<td align="center">10.5%</td>
+</tr>
+<tr class="odd">
+<td align="center">$3,000</td>
+<td align="center">5.0%</td>
+</tr>
+<tr class="even">
+<td align="center">$3,250</td>
+<td align="center">1.9%</td>
+</tr>
+<tr class="odd">
+<td align="center">$3,500</td>
+<td align="center">0.5%</td>
+</tr>
+<tr class="even">
+<td align="center">$3,750</td>
+<td align="center">0.1%</td>
+</tr>
+<tr class="odd">
+<td align="center">$4,000</td>
+<td align="center">0.0%</td>
+</tr>
+</tbody>
+</table>
+<p>There are a number of other distributions that I could fit to achieve this same shape. A Weibull, gamma, lognormal, or even an alternative implementation of the truncated normal, could all be specified with parameters such that they have a shape similar to the above. However, I don’t have a complete set of observed data for all price bands. I don’t even have information on any single price band. Such lack of data prevents me from using a parametric estimation approach, such as maximum likelihood, which I’d need to fit these other distributions. Instead, I’m left to judge the distribution. But none of these other distributions contain interpretable parameters that are as easily judged. By contrast, the Kimball distribution’s parameters (a mean, minimum, and maximum) are easily obtained. The very words used to describe the price band problem are precisely the Kimball distribution’s necessary and sufficient parameters.</p>
+</div>
+<div id="share-your-story" class="section level2">
+<h2>Share your story</h2>
+<p>The Kimball package and system of life tables enables the data scientist to easily fit a wide range of data using easily observed and judgmental inputs. I keep the Kimball close at hand when I need a truncated normal probability density with intuitive and interpretable parameters.</p>
+<p>Strange that such a helpful set of functions should remain so obscure for nearly 75 years. Perhaps putting it in an R package can help remedy that and put the knowledge into more hands. If you find the Kimball package helpful, if you apply it to something new and different from the above examples, I’d sure like to hear your story.</p>
+<p>Have you got an application for which the Kimball distribution works particularly well?</p>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Kimball, Bradford F., “A System of Life Tables for Physical Property Based on the Truncated Normal Distribution”. (1947). <em>Econometrica</em>, Vol. 15, No. 4 (Oct), pp. 342-360<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>Oates, Thomas A. and Milton H. Spencer, “A System of Retirement Frequencies for Depreciable Assets” (1962). <em>The Accounting Review</em>, Vol. 37, No. 3 (July), pp. 452-459<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>I’m going to assume in this example that mobile phone shipments equal mobile phone sales. In practice, however, there’s a small amount of inventory in the channel and shipments in a given time period usually don’t precisely match end-user sales for that same time period.<a href="#fnref3">↩</a></p></li>
+</ol>
+</div>
