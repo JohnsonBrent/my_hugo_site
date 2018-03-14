@@ -1,0 +1,10 @@
+---
+title: Projects2
+author: Brent Johnson
+date: '2017-10-29'
+slug: projects-2-rmd
+categories: []
+tags: []
+---
+
+A collection of code projects, most located on my GitHub site.  Feel free to comment there or [via email](brent@centralmoment.com).

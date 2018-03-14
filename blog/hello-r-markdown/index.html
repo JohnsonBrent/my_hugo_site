@@ -14,9 +14,9 @@
 <meta property="og:site_name" content="Brent Johnson" />
 <meta property="og:locale" content="nn_NO" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/data-science-unplugged-additive-boosting/" />
-<meta property="og:title" content="Data Science Unplugged: Additive Boosting" />
-<meta property="twitter:title" content="Data Science Unplugged: Additive Boosting">
+<meta property="og:url" content="/blog/hello-r-markdown/" />
+<meta property="og:title" content="Hello R Markdown" />
+<meta property="twitter:title" content="Hello R Markdown">
 
     <meta property="twitter:card" content="summary">
 
@@ -25,10 +25,10 @@
 <title>
 
 
-     Brent Johnson - Data Science Unplugged: Additive Boosting 
+     Brent Johnson - Hello R Markdown 
 
 </title>
-<link rel="canonical" href="/posts/data-science-unplugged-additive-boosting/">
+<link rel="canonical" href="/blog/hello-r-markdown/">
 
 
 <style media="screen">
@@ -929,7 +929,7 @@ margin-left: -4%;
 
   <style type="text/css" media="screen">
     a {
-    color: #0645AD;
+    color: #527fc1f;
 }
 
 a:hover {
@@ -941,25 +941,25 @@ section.main .content .markdown, section.header .name, section.header nav ul li:
 }
 
 section.header nav ul li {
-    color: #969896;
+    color: #6a7a8b;
 }
 
 section.main .content .markdown code {
     background-color: #f9f9f9;
-    color: #0645AD;
+    color: #527fc1f;
 }
 
 section.main .content .markdown pre, section.main .content .markdown pre code {
-    background-color: #ffffe6;
-    color: #969896;
+    background-color: #282a36;
+    color: #87a5d2;
 }
 
 .hljs, .hljs-subst, .hljs-variable {
-    color: #969896;
+    color: #87a5d2;
 }
 
 .hljs-type {
-    color: #3E423A;
+    color: #97d28b;
 }
 
 .hljs-quote {
@@ -967,11 +967,11 @@ section.main .content .markdown pre, section.main .content .markdown pre code {
 }
 
 .hljs-string, .hljs-number, .hljs-selector-id, .hljs-selector-class, .hljs-template-tag, .hljs-deletion {
-    color: #417378;
+    color: #96c2d7;
 }
 
 .hljs-comment {
-    color: #969896;
+    color: #6a7a8b;
 }
 
 .hljs-regexp, .hljs-symbol, .hljs-template-variable {
@@ -979,7 +979,7 @@ section.main .content .markdown pre, section.main .content .markdown pre code {
 }
 
 .hljs-keyword, .hljs-attribute, .hljs-meta-keyword, .hljs-doctag, .hljs-name {
-    color: #3E423A;
+    color: #97d28b;
 }
 
 .hljs-link, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-title, .hljs-section {
@@ -987,11 +987,11 @@ section.main .content .markdown pre, section.main .content .markdown pre code {
 }
 
 .hljs-built_in, .hljs-bullet, .hljs-code, .hljs-addition {
-    color: #3E423A;
+    color: #97d28b;
 }
 
 .ssk {
-    background-color: #969896;
+    background-color: #6a7a8b;
 }
   </style>
 
@@ -1025,10 +1025,22 @@ section.main .content .markdown pre, section.main .content .markdown pre code {
             <nav>
                 <ul>
                     
+                        <a href="/blog/"><li>Blog</li></a>
+                    
                     
                         
                             
-                            <a href="/posts"><li>posts</li></a>
+                        
+                    
+                        
+                            
+                            <a href="/post"><li>post</li></a>
+                            
+                        
+                    
+                        
+                            
+                            <a href="/projects"><li>projects</li></a>
                             
                         
                     
@@ -1047,25 +1059,129 @@ section.main .content .markdown pre, section.main .content .markdown pre code {
     </div>
 </section>
 
-<section class="main">
+
+<section class="main post non-narrow zero-top-spacing">
     <div class="container">
         <div class="content">
-            <div class="page-heading">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
 
-    Data Science Unplugged: Additive Boosting
+    Hello R Markdown
 
 </div>
 
+                </div>
+                <div class="meta">
+                    <div class="date" title="Thu Jul 23 2015 21:13:14 -0500">Jul 23, 2015</div>
+                    
+                        
+                        <div class="author" title="Frida Gomam"><div class="middot"></div>Frida Gomam</div>
+                        
+                    
+                    <div class="reading-time"><div class="middot"></div>1 minute read</div>
+                    <div class="tags">
+                        <ul>
+                          
+                            <div class="middot"></div>
+                            <li><a href="/tags/r-markdown">R Markdown</a> </li>
+                          
+                            <div class="middot"></div>
+                            <li><a href="/tags/plot">plot</a> </li>
+                          
+                            <div class="middot"></div>
+                            <li><a href="/tags/regression">regression</a> </li>
+                          
+                        </ul>
+                    </div>
+                    <div class="tags">
+                        <ul>
+                          
+                          
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <div class="markdown">
                 
     
-    <p>I’ve moved the Data Science Unplugged articles to <a href="/files/data-science-unplugged-additive-boosting.html">another location</a>. Access it there.</p>
+    <div id="r-markdown" class="section level1">
+<h1>R Markdown</h1>
+<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
+<p>You can embed an R code chunk like this:</p>
+<pre class="r"><code>summary(cars)
+##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00
+fit &lt;- lm(dist ~ speed, data = cars)
+fit
+## 
+## Call:
+## lm(formula = dist ~ speed, data = cars)
+## 
+## Coefficients:
+## (Intercept)        speed  
+##     -17.579        3.932</code></pre>
+</div>
+<div id="including-plots" class="section level1">
+<h1>Including Plots</h1>
+<p>You can also embed plots. See Figure <a href="#fig:pie">1</a> for example:</p>
+<pre class="r"><code>par(mar = c(0, 1, 0, 1))
+pie(
+  c(280, 60, 20),
+  c(&#39;Sky&#39;, &#39;Sunny side of pyramid&#39;, &#39;Shady side of pyramid&#39;),
+  col = c(&#39;#0292D8&#39;, &#39;#F7EA39&#39;, &#39;#C4B632&#39;),
+  init.angle = -50, border = NA
+)</code></pre>
+<div class="figure"><span id="fig:pie"></span>
+<figure class="progressive"><img class="progressive__img progressive--not-loaded" data-progressive="/blog/2015-07-23-r-rmarkdown_files/figure-html/pie-1.png" src="/blog/2015-07-23-r-rmarkdown_files/figure-html/low/pie-1.png" alt="A fancy pie chart." width="672" /></figure>
+<p class="caption">
+Figure 1: A fancy pie chart.
+</p>
+</div>
+</div>
 
 
+                <br>
             </div>
+            
+            <div class="share">
+                <a href="" class="ssk ssk-facebook"></a>
+                <a href="" class="ssk ssk-twitter"></a>
+                <a href="" class="ssk ssk-google-plus"></a>
+                <a href="" class="ssk ssk-linkedin"></a>
+            </div>
+            
+            
+                <div class="navigation">
+                    
+                    <div>
+                        <img class="icon" src="/img/back.svg" alt="back" />
+                        <a href="/blog/creating-a-new-theme/">Creating a New Theme</a>
+                    </div>
+                    
+                    <div style="width: 100%;"></div>
+                    
+                    <div>
+                        <a href="/blog/example-article/">Example article</a>
+                        <img class="icon" src="/img/next.svg" alt="next" />
+                    </div>
+                    
+                </div>
+            
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
         </div>
     </div>
 </section>
+
 <section class="footer">
     <div class="container">
 

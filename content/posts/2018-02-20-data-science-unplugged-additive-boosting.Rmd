@@ -2,12 +2,16 @@
 title: 'Data Science Unplugged: Additive Boosting'
 author: Brent Johnson
 date: '2018-01-19'
-slug: data-science-unplugged-additive-boosting
+slug: 2018-02-20-data-science-unplugged-additive-boosting (content)
 categories: ["R"]
 tags: ["Data Science Unplugged"]
 ---
 
 
+<<<<<<< HEAD
 
 I've moved the Data Science Unplugged articles to [another location](/files/data-science-unplugged-additive-boosting.html). Access it there.
+=======
+The file's been [moved here.](/files/2018-02-19-data-science-unplugged-additive-boosting.html)
+>>>>>>> afa5242634e8cc38f4e79a3fc8b3523ad7aeef97
 
