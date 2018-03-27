@@ -1,18 +1,10 @@
 ---
-title: "Data Science Unplugged: Additive Boosting"
-subtitle: "Additive boosting explained using simple code"
+title: 'Data Science Unplugged: Additive Boosting'
 author: "Brent Johnson"
-date: "2018-01-19"
-output:
-  tufte::tufte_handout:
-    citation_package: natbib
-    latex_engine: xelatex
-  tufte::tufte_html: default
-  tufte::tufte_book:
-    citation_package: natbib
-    latex_engine: xelatex
-bibliography: skeleton.bib
-link-citations: yes
+date: '2018-01-19'
+#output: tufte::tufte_html
+output: tufte::tufte_handout
+subtitle: Additive boosting explained using simple code
 ---
 
 ```{r setup, include=FALSE}
@@ -32,7 +24,6 @@ When I want to really understand a machine learning or statistical tool, to real
 In this document I'll explore additive boosting. As I do so, I'm going to tie my hands, so to speak, and just use base R as much as possible. As far as ground rules go, I will allow myself the use of plotting packages, the [tidyverse](https://www.tidyverse.org/), and other packages as long as they don't mask the fundamental algorithm that I'm trying most to make clear.
 
 The benefits of this manual approach include not only an understanding of the algorithm, but greater knowledge of its assumptions and when it is or isn't likely to work well.  Doing so also gives me great ideas for further improving the algorithm, possibly inventing unique enhancements on my own.
-
 
 ## Boosting and ensemble predictive models
 
@@ -128,22 +119,23 @@ for (i in seq(niter))
 
 The `alpha` term in the code above also informs the weights given to each observation. On close inspection it should be clear that at each iteration of the algorithm, the rows inside `X$weight` that correspond to correctly predicted values of `Y` receive less relative weight.  And weight values corresponding to incorrect predictions receive greater relative weight. The change in observational weights causes the rpart function to generate different classification trees with each iteration.  Each tree chases after those observations that were erroneously predicted during the previous iteration. 
 
-``` {r first.iteration, echo=FALSE, fig.margin = TRUE, fig.cap = "AdaBoost's first tree starts off with equal weights. Predicted values of 0 for Y go to the left; Predicted values of 1 go to the right. The true proportions are described inside the boxes, e.g., 49% of all `X$Y` values are both predicted to equal zero and have a true value of 0.", fig.width=3.5, fig.height=3.5, cache=TRUE, message=FALSE}
+``` {r firstiteration, echo=FALSE, fig.margin = TRUE, fig.cap = "AdaBoost's first tree starts off with equal weights. Predicted values of 0 for Y go to the left; Predicted values of 1 go to the right. The true proportions are described inside the boxes.", fig.width=3.5, fig.height=3.5, cache=TRUE, message=FALSE}
 par(bg="#fffff8")
 rpart.plot::prp(models[[1]], type=2, extra=101, shadow.col="grey", box.palette = "Blues")
 ````
+
 To make this clear, I plot the first tree or iteration generated from the above AdaBoost example.  This tree splits on variable `X9`. That is, when starting with equal weight given to all data records, the best variable for splitting successes and failures is `X9`. In this iteration, the model predicts all observations for which X9 >= -1.2 as failures (Y=0).  This makes up 88% of the sample. And the model predicts all other observations (the remaining 12% of the sample) as successes (Y=1). The error for this first iteration is 58.8% (which is .49 + .098) which is somewhat higher than chance prediction.  
 
 The second tree reflects a data frame wherein the observations with poorly predicted values from the first iteration receive greater weight. As a result, the highly weighted observations drive a different classification tree--one that now splits on variable `X4`. In the iterative loop above, this process continues for 98 more iterations. Our AdaBoost ensemble has 100 total classification trees. 
 
-``` {r second.iteration, echo=FALSE, fig.margin = TRUE, fig.cap = "This is the tree from AdaBoost's second iteration. In this tree and all subsequent trees, the weights differ across the observations and, so, the weighted proportion of correct (and incorrect) observations in each branch begins to change.", fig.width=3.5, fig.height=3.5, cache=TRUE, message=FALSE}
+``` {r seconditeration, echo=FALSE, fig.margin = TRUE, fig.cap = "This is the tree from AdaBoost's second iteration. In this tree and all subsequent trees, the weights differ across the observations and, so, the weighted proportion of correct (and incorrect) observations in each branch begins to change.", fig.width=3.5, fig.height=3.5, cache=TRUE, message=FALSE}
 par(bg="#fffff8")
 prp(models[[2]], type=2, extra=101, shadow.col="grey", box.palette = "Blues")
 ````
 
 It's easy to plot the progress and rate of success of the AdaBoost algorithm as it completes the different iterations. In the next plot we see that the algorithm starts off making successful predictions at a rate somewhat better than chance.  However, over subsequent iterations the algorithm improves and the ensemble produces a successful prediction for 85% of the observations. That's pretty good for a model that started with just weakly correlated predictor values.  Predictions using AdaBoost appear to be a great improvement over the single best-fitting predictive stump with which we started.  
 
-``` {r boost.plot.weak, echo=FALSE, fig.margin = TRUE, fig.cap = "Prediction success from AdaBoost applied to a WEAK learner. AdaBoost begins with a classificatation just slightly better than chance and gradually improves with more iterations.", fig.width=3.5, fig.height=3.5, cache=TRUE, message=FALSE}
+``` {r boostplotweak, echo=FALSE, fig.margin = TRUE, fig.cap = "Prediction success from AdaBoost applied to a WEAK learner. AdaBoost begins with a classificatation just slightly better than chance and gradually improves with more iterations.", fig.width=3.5, fig.height=3.5, cache=TRUE, message=FALSE}
 par(bg = '#fffff8')
 plot(success.vec[1:100], pch=19, col='#6BAED6',
      xlab= "Iteration", ylab= "% Prediction success", ylim=c(.5, .9)) 
@@ -217,7 +209,7 @@ for (i in seq(niter))
 ````
 
 
-``` {r boost.plot.strong, echo=FALSE, fig.margin = TRUE, fig.cap = "Prediction success from AdaBoost using a STRONG learner. Here AdaBoost starts off predicting well but improvement is not as good as it is with the weak learner above.", fig.width=3.5, fig.height=3.5, cache=TRUE, message=FALSE}
+``` {r boostplotstrong, echo=FALSE, fig.margin = TRUE, fig.cap = "Prediction success from AdaBoost using a STRONG learner. Here AdaBoost starts off predicting well but improvement is not as good as it is with the weak learner above.", fig.width=3.5, fig.height=3.5, cache=TRUE, message=FALSE}
 par(bg = '#fffff8')
 plot(success.vec[1:100], pch=19, col="#6BAED6",
      main="",
@@ -277,7 +269,7 @@ for (i in seq(niter))
 }
 ````
 
-``` {r boost.plot.noise, echo=FALSE, fig.margin = TRUE, fig.cap = "Prediction success from AdaBoost and a NOISE learner. Even with noise data, AdaBoost improves prediction above chance after 100 iterations.", fig.width=3.5, fig.height=3.5, cache=TRUE, message=FALSE }
+``` {r boostplotnoise, echo=FALSE, fig.margin = TRUE, fig.cap = "Prediction success from AdaBoost and a NOISE learner. Even with noise data, AdaBoost improves prediction above chance after 100 iterations.", fig.width=3.5, fig.height=3.5, cache=TRUE, message=FALSE }
 par(bg = '#fffff8')
 plot(success.vec[1:100], pch=19, col='#6BAED6',
      xlab= "Iteration", ylab= "% Prediction success", ylim=c(.5, .9)) 
