@@ -7,4 +7,4 @@ categories: ["R"]
 tags: ["Data Science Unplugged"]
 ---
 
-Sorry. I moved [the file.](/files/Data science unplugged additive boosting bgcolor.pdf) as I attempt to publish it using the Tufte RMarkdown template. 
+Sorry. I moved [the file.](/files/Data Science Unplugged_ Additive Boosting.htm) as I attempt to publish it using the Tufte Rmarkdown package.
